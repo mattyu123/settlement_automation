@@ -80,9 +80,7 @@ const workautoDVtransfers = turnArrayIntoObject(cleanCombinedAQandDVArray[1])
 function getManualTransfersRequiredForDV(){
   //Object containing all the settlement values that need to be initiated manually 
   let manualTransfersRequired = {}
-  // Logger.log(dvSend)
-  // Logger.log(workautoDVtransfers)
-
+  
   //loop through the total trade report, check if the value was also initiated by workauto, if it wasn't add it to the final object parameter
   for (const item in dvSend) {
     if (!(item in workautoDVtransfers)) {
@@ -112,9 +110,6 @@ const aqManualTransfersRequired = getManualTransfersRequiredForAQ()
 
 Logger.log(dvManualTransfersRequired)
 Logger.log(aqManualTransfersRequired)
-
-
-//When you run it, be sure to run the formatWorkAuto function, when you try to run turnArrayIntoObject, for whatever reason it will show as arr is not iterable 
 
 //--------------------------------------------------------Display the AQ and DV outgoing settlements to the sheet"--------------------------------------------------------//
 
@@ -159,11 +154,6 @@ function displayWorkautoTradeReports() {
   // Set the values in the right column
   const dvValuesRange = sendDVCell.offset(0, 1, outgoingDVvalues.length, 1);
   dvValuesRange.setValues(outgoingDVvalues.map(value => [value]));
-
-
-
-
-  //THERE IS A BUG BELOW WHERE THE DV AND AQ VALUES AREN'T BEING UPDATED PROPERLY 
 
   ///----------Display the values of the AQ transfers that weren't initiated by WorkAuto------------//
   const aqManualKeys = Object.keys(aqManualTransfersRequired)

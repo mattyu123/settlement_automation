@@ -30,7 +30,7 @@ const day3DataValues = day3DataRange.getValues()
 const day4DataRange = aqSheet.getRange("AB3:AH100")
 const day4DataValues = day4DataRange.getValues()
 
-//Build function that takes in the AQ data, and 
+//Build function that takes in the AQ data, and produces a clean object
 function getNetWSsettlement(valueRange) {
   let cleanSettlementReport = []
   let tradeValuesObj = {}

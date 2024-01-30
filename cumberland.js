@@ -70,7 +70,6 @@ function formatCumberlandValues() {
 //Leveraging the result as a global variable 
 const cleanObj = formatCumberlandValues()
 
-
 //Take the object and only get the positive values, the values that we need to send to Cumberland
 function settlementAmounts(cleanObj) {
   const movements = {}

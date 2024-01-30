@@ -106,8 +106,7 @@ function aggregatedTradeReports(day1, day2, day3, day4) {
 //Save the final object as a global variable
 const consolidatedReport = aggregatedTradeReports(day1Obj, day2Obj, day3Obj, day4Obj)
 
-
-// ---------------------------------------------- Separate out the final consolidated report value 
+// ---------------------------------------------- Separate out the final consolidated report value ---------------
 
 //Function takes the final clean object and produces an object of settlements to send to DV
 function sendToDV(consolidatedReport) {
